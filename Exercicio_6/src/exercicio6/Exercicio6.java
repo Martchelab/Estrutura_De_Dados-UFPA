@@ -105,9 +105,10 @@ class Lista {
         NoLista noAtual = this.inicio;
         System.out.println("Lista :");
         while(noAtual.proximo!=null) {
-            System.out.println(noAtual.valor);
-            noAtual = noAtual.proximo;
+                System.out.println(noAtual.valor);
+                noAtual = noAtual.proximo;                                                                                                                                                                                                                                                                                                                
         }
+        System.out.println(noAtual.valor);         
     }
     
 }
@@ -118,9 +119,10 @@ public class Exercicio6 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Lista teste = new Lista();
-        System.out.print(teste.inicio);
+        Lista teste = new Lista(); 
         teste.inserir(2);
+        teste.inserir(3);
+        teste.inserir(4);
         teste.mostraLista();
     }
     
