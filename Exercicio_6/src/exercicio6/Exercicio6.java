@@ -43,21 +43,21 @@ class Lista {
             while(noAtual.proximo!=null)
                 noAtual = noAtual.proximo;
             noAtual.proximo = new NoLista(valor);
-            this.inicio = noAtual;
         }
     }
     
     void inserirPos(int valor, int pos) {
         if(this.inicio==null)
             this.inicio = new NoLista(valor);
+        else if (pos <=1)
+            this.inserir(valor);
         else {
             NoLista noAtual = this.inicio;
-            for(int x = 0; x<pos;x++)
+            for(int x = 0; x<(pos-2);x++)
                 noAtual = noAtual.proximo;
             NoLista novoNo = new NoLista(valor);
             novoNo.proximo = noAtual.proximo;
             noAtual.proximo = novoNo;
-            this.inicio = noAtual;
         }
     }
     
@@ -72,7 +72,6 @@ class Lista {
                 posAtual = posAtual.proximo;
             }
             noAtual.proximo = posAtual.proximo;
-            this.inicio = noAtual;
         }
         
     }
@@ -86,7 +85,7 @@ class Lista {
     
     int elementoLista(int pos) {
         NoLista noAtual = this.inicio;
-        for(int x = 0; x<pos;x++)
+        for(int x = 0; x<(pos-1);x++)
             noAtual = noAtual.proximo;
         return noAtual.valor;    
     }
@@ -120,10 +119,16 @@ public class Exercicio6 {
      */
     public static void main(String[] args) {
         Lista teste = new Lista(); 
-        teste.inserir(2);
-        teste.inserir(3);
-        teste.inserir(4);
+        teste.inserirFim(2);
+        teste.inserirFim(3);
+        teste.inserirFim(4);
+        teste.inserirFim(1);
+        teste.inserirPos(6, 5);
+        teste.removerPrimeiroValorLista(6);
         teste.mostraLista();
+        teste.verificarListaVazia();
+        System.out.println(teste.elementoLista(4));
+        System.out.println(teste.posElemento(1));
     }
     
 }
