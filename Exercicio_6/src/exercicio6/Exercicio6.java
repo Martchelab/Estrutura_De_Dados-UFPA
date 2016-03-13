@@ -122,7 +122,7 @@ public class Exercicio6 {
         teste.inserirFim(2);
         teste.inserirFim(3);
         teste.inserirFim(4);
-        teste.inserirFim(1);
+        teste.inserir(1);
         teste.inserirPos(6, 5);
         teste.removerPrimeiroValorLista(6);
         teste.mostraLista();
